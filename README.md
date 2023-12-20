@@ -5,3 +5,15 @@
 Правила игры:
 Ножницы режут бумагу. Бумага заворачивает камень. Камень тупит ножницы. При равных знаках - ничья.
 
+Начальный экран:
+![image](https://github.com/keivik3/123/assets/145693707/65d2f8a2-9c24-46b4-bcb6-89973ade7aa2)
+
+Ожидание второго игрока:
+![image](https://github.com/keivik3/123/assets/145693707/7facf74a-4f19-458d-a333-a4aa43256a58)
+
+Готовность к игре:
+![image](https://github.com/keivik3/123/assets/145693707/606bca4e-45ae-43ba-a11e-1fcc94b26021)
+
+Результат раунда:
+![image](https://github.com/keivik3/123/assets/145693707/fdd0b848-39d9-4e54-ad50-7dcb8a5371d2)
+
