@@ -30,8 +30,8 @@ def threaded_client(conn, p, gameId):
     :type p: int
     :param gameId: the identitification code of the game session
     :type gameId: int
-    
-    
+
+
     """
     global idCount
     conn.send(str.encode(str(p)))
@@ -55,18 +55,17 @@ def threaded_client(conn, p, gameId):
                     conn.sendall(pickle.dumps(game))
             else:
                 break
-        except:
+        except BaseException:
             break
 
     print("Lost connection")
     try:
         del games[gameId]
         print("Closing Game", gameId)
-    except:
+    except BaseException:
         pass
     idCount -= 1
     conn.close()
-
 
 
 while True:
@@ -75,13 +74,12 @@ while True:
 
     idCount += 1
     p = 0
-    gameId = (idCount - 1)//2
+    gameId = (idCount - 1) // 2
     if idCount % 2 == 1:
         games[gameId] = Game(gameId)
         print("Creating a new game...")
     else:
         games[gameId].ready = True
         p = 1
-
 
     start_new_thread(threaded_client, (conn, p, gameId))
