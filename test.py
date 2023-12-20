@@ -58,7 +58,6 @@ class GameTest(unittest.TestCase):
         self.game.moves = ['P', 'R']
         self.assertEqual(self.game.winner(), 0)
 
-        # Add more test cases for other combinations of moves
 
     def test_resetWent(self):
         self.game.p1Went = True
