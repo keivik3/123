@@ -15,15 +15,16 @@ class Game:
     :type wins: list
     :param ties: the number of ties in the game
     :type ties: int
-    
+
     """
+
     def __init__(self, id):
         self.p1Went = False
         self.p2Went = False
         self.ready = False
         self.id = id
         self.moves = [None, None]
-        self.wins = [0,0]
+        self.wins = [0, 0]
         self.ties = 0
 
     def get_player_move(self, p):
@@ -43,7 +44,7 @@ class Game:
         :type player: int
         :param move: the actual move of the player
         :type move: str
-        
+
         """
         self.moves[player] = move
         if player == 0:
@@ -53,19 +54,19 @@ class Game:
 
     def connected(self):
         """The function of checking the readiness of the players
-        
+
         """
         return self.ready
 
     def bothWent(self):
         """The function of checking the finish of the round
-        
+
         """
         return self.p1Went and self.p2Went
 
     def winner(self):
         """The function of checking the winner of the round
-        
+
         """
 
         p1 = self.moves[0].upper()[0]
@@ -89,7 +90,7 @@ class Game:
 
     def resetWent(self):
         """The function of reseting the round
-        
+
         """
         self.p1Went = False
         self.p2Went = False
