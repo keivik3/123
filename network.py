@@ -15,8 +15,9 @@ class Network:
     :type addr: tuple
     :param p: the connection to the server
     :type p: Network.client.recv() - str
-    
+
     """
+
     def __init__(self):
         self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server = "127.0.0.1"
@@ -26,18 +27,18 @@ class Network:
 
     def getP(self):
         """Taking the connection status
-        
+
         """
         return self.p
 
     def connect(self):
         """Connection to the server
-        
+
         """
         try:
             self.client.connect(self.addr)
             return self.client.recv(2048).decode()
-        except:
+        except BaseException:
             pass
 
     def send(self, data):
@@ -48,11 +49,10 @@ class Network:
         :returns: the deserialized response from the server
         :rtype: any
         :raises socket.error: If it was an error trying to send data
-        
+
         """
         try:
             self.client.send(str.encode(data))
-            return pickle.loads(self.client.recv(2048*2))
+            return pickle.loads(self.client.recv(2048 * 2))
         except socket.error as e:
             print(e)
-
