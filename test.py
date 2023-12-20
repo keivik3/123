@@ -3,6 +3,7 @@ from unittest import mock
 from network import Network
 from game import Game
 
+
 class GameTest(unittest.TestCase):
 
     def setUp(self):
@@ -76,7 +77,6 @@ class TestNetwork(unittest.TestCase):
         network.p = "Connected"
         self.assertEqual(network.getP(), "Connected")
 
-
     def test_connect_failure(self):
         network = Network()
         with mock.patch('socket.socket') as mock_socket:
@@ -84,9 +84,6 @@ class TestNetwork(unittest.TestCase):
             mock_client.connect.side_effect = Exception("Connection failed")
             response = network.connect()
             self.assertIsNone(response)
-
-
-
 
 
 if __name__ == '__main__':
